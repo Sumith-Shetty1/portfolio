@@ -1,478 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Sumith A. Shetty, a Computer Science Engineering student focused on software development, cybersecurity and AI." />
-  <meta name="author" content="Sumith A. Shetty" />
-  <meta property="og:title" content="Sumith A. Shetty | Computer Science Engineering Student" />
-  <meta property="og:description" content="Portfolio of Sumith A. Shetty, a Computer Science Engineering student focused on software development, cybersecurity and AI." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#F8F8F6" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Sumith A. Shetty | Computer Science Engineering Student</title>
-</head>
-<body>
-
-  <!-- ======== NAVBAR ======== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">SUMITH A. SHETTY</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#" class="nav-resume-btn">Resume ↗</a></li>
-      </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Sumith A. Shetty, a Computer Science Engineering student focused on software development, cybersecurity and AI."
+    />
+    <meta name="author" content="Sumith A. Shetty" />
+    <meta property="og:title" content="Sumith A. Shetty | Computer Science Engineering Student" />
+    <meta
+      property="og:description"
+      content="Portfolio of Sumith A. Shetty, a Computer Science Engineering student focused on software development, cybersecurity and AI."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#F7F7F2" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sumith A. Shetty | Computer Science Engineering Student</title>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <span id="scrollProgress"></span>
     </div>
-  </nav>
 
-  <main>
+    <header class="site-header">
+      <nav class="navbar container" id="navbar">
+        <a href="#hero" class="brand">SUMITH.</a>
 
-    <!-- ======== HERO ======== -->
-    <section class="hero" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="hero-eyebrow">COMPUTER SCIENCE ENGINEERING · MANGALORE, INDIA</span>
-          <h1 class="hero-heading">I build things, learn deeply, and solve problems with technology.</h1>
-          <p class="hero-subtext">Computer Science & Engineering student exploring software development, cybersecurity, AI and practical engineering.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects →</a>
-            <a href="#" class="btn btn-outline">Download Resume</a>
-          </div>
-        </div>
-        <div class="hero-info-card">
-          <div class="info-card">
-            <div class="info-card-name">SUMITH A. SHETTY</div>
-            <div class="info-card-divider"></div>
-            <div class="info-card-row">
-              <span class="info-card-label">Degree</span>
-              <span class="info-card-value">B.E. Computer Science & Engineering</span>
-            </div>
-            <div class="info-card-row">
-              <span class="info-card-label">College</span>
-              <span class="info-card-value">AJIET · 2028</span>
-            </div>
-            <div class="info-card-divider"></div>
-            <div class="info-card-row">
-              <span class="info-card-label">Focus</span>
-              <span class="info-card-value">Software Development</span>
-            </div>
-            <div class="info-card-row">
-              <span class="info-card-label"></span>
-              <span class="info-card-value">Cybersecurity</span>
-            </div>
-            <div class="info-card-row">
-              <span class="info-card-label"></span>
-              <span class="info-card-value">AI</span>
-            </div>
-            <div class="info-card-divider"></div>
-            <div class="info-card-row">
-              <span class="info-card-label">CGPA</span>
-              <span class="info-card-value info-card-accent">8.4</span>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="assets/resume.pdf" class="nav-resume" download>Resume ↗</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">CSE STUDENT · CYBERSECURITY · SOFTWARE DEVELOPMENT</p>
+            <h1>I build things that <span>solve real problems.</span></h1>
+            <p class="lead">
+              Computer Science Engineering student exploring software development,
+              cybersecurity, AI and practical engineering through projects and experimentation.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">Explore My Work →</a>
+              <a href="assets/resume.pdf" class="btn btn-secondary" download>Download Resume</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ======== ABOUT ======== -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
+          <div class="hero-visual reveal">
+            <div class="profile-card">
+              <div class="profile-header">
+                <span class="mini-label">Engineer Profile</span>
+                <span class="status-pill"><span class="status-dot"></span>Available for opportunities</span>
+              </div>
+
+              <h2>SUMITH A. SHETTY</h2>
+              <p class="meta">CSE • 2028</p>
+
+              <div class="profile-block">
+                <span class="profile-label">Currently exploring</span>
+                <ul>
+                  <li>Cybersecurity</li>
+                  <li>Software Engineering</li>
+                  <li>AI</li>
+                </ul>
+              </div>
+
+              <p class="location">Mangalore, India</p>
+            </div>
+
+            <div class="terminal-panel" aria-live="polite">
+              <div class="terminal-topbar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="terminal-content">
+                <pre id="terminalOutput"></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head reveal">
             <span class="section-number">01 / ABOUT</span>
+            <h2>More than just a student.</h2>
           </div>
-          <div class="section-content-col">
-            <h2 class="section-heading">A student who likes building things.</h2>
-            <div class="about-text">
-              <p>I'm a Computer Science & Engineering student interested in building useful software and understanding how systems work.</p>
-              <p>My interests sit at the intersection of software development, cybersecurity and AI. I enjoy taking ideas from a concept to a working project and learning through practical implementation.</p>
+
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <p>
+                I’m a Computer Science & Engineering student who enjoys turning technical ideas into
+                useful systems, products and problem-solving tools. I like building things that are practical,
+                thoughtful and grounded in real-world needs.
+              </p>
+              <p>
+                My interests sit at the intersection of software development, cybersecurity and AI. I enjoy
+                learning by building, testing ideas quickly and improving them through iteration.
+              </p>
             </div>
-            <div class="about-facts">
-              <div class="about-fact">
-                <span class="about-fact-label">Education</span>
-                <span class="about-fact-value">B.E. CSE (ICB)</span>
+
+            <div class="stats-grid reveal">
+              <div class="stat-card">
+                <span class="stat-value" data-target="2028">0</span>
+                <span class="stat-label">Graduation</span>
               </div>
-              <div class="about-fact">
-                <span class="about-fact-label">College</span>
-                <span class="about-fact-value">AJIET, Mangalore</span>
+              <div class="stat-card">
+                <span class="stat-value" data-target="8.4">0</span>
+                <span class="stat-label">Current CGPA</span>
               </div>
-              <div class="about-fact">
-                <span class="about-fact-label">CGPA</span>
-                <span class="about-fact-value">8.4</span>
+              <div class="stat-card">
+                <span class="stat-value" data-target="05">0</span>
+                <span class="stat-label">Projects</span>
               </div>
-              <div class="about-fact">
-                <span class="about-fact-label">Graduation</span>
-                <span class="about-fact-value">2028</span>
+              <div class="stat-card">
+                <span class="stat-value" data-target="CSE">0</span>
+                <span class="stat-label">ICB</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======== PROJECTS ======== -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head reveal">
             <span class="section-number">02 / SELECTED WORK</span>
+            <h2>Things I’ve built.</h2>
           </div>
-          <div class="section-content-col">
-            <h2 class="section-heading">Things I've built.</h2>
-            <p class="section-subtext">A few projects I've worked on — from security tools to student platforms.</p>
+
+          <div class="project-list">
+            <article class="project-panel reveal expanded" tabindex="0" data-project="anveshan">
+              <div class="project-header">
+                <span class="project-number">01</span>
+                <div class="project-heading">
+                  <h3>ANVESHAN</h3>
+                  <p>AI-Powered Email Threat Detection & Forensic Intelligence Platform</p>
+                </div>
+                <span class="project-domain blue">Cybersecurity</span>
+                <span class="project-arrow">→</span>
+              </div>
+
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <span class="meta-label">Problem</span>
+                    <p>Suspicious emails are hard to process quickly, especially when they hide malicious intent behind convincing content and incomplete context.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Solution</span>
+                    <p>An AI-assisted platform to assess suspicious emails, highlight possible threats, and support forensic intelligence gathering.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail-grid">
+                  <div>
+                    <span class="meta-label">Implementation</span>
+                    <p>Focused on email analysis, behavior-based indicators, geo-context enrichment and structured investigation workflows.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Technologies</span>
+                    <div class="tag-row">
+                      <span>Python</span>
+                      <span>AI/ML</span>
+                      <span>OSINT</span>
+                      <span>Email Security</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">What I learned</span>
+                  <p>Threat detection is not only about detection — it also needs clarity, context and a strong investigation flow for users to trust the output.</p>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">Future scope</span>
+                  <p>Expand with stronger intelligence integrations, automated report generation and deeper case management workflows.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-panel reveal" tabindex="0" data-project="webguard">
+              <div class="project-header">
+                <span class="project-number">02</span>
+                <div class="project-heading">
+                  <h3>WEBGUARD</h3>
+                  <p>AI-Assisted Web Vulnerability Detection & Security Testing Platform</p>
+                </div>
+                <span class="project-domain blue">Cybersecurity</span>
+                <span class="project-arrow">→</span>
+              </div>
+
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <span class="meta-label">Problem</span>
+                    <p>Many common web vulnerabilities remain unnoticed during rapid development cycles and informal testing sessions.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Solution</span>
+                    <p>A platform that helps identify likely weaknesses such as XSS and guides the user through a more structured security review process.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail-grid">
+                  <div>
+                    <span class="meta-label">Implementation</span>
+                    <p>Pattern-based checks, OWASP-aware analysis and AI-assisted interpretation for faster vulnerability identification.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Technologies</span>
+                    <div class="tag-row">
+                      <span>Python</span>
+                      <span>JavaScript</span>
+                      <span>Web Security</span>
+                      <span>OWASP</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">What I learned</span>
+                  <p>Security tools become more powerful when they explain risk clearly and make findings actionable for developers.</p>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">Future scope</span>
+                  <p>Expand coverage for more vulnerability classes and connect the analysis flow with cleaner reporting tools.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-panel reveal" tabindex="0" data-project="indra">
+              <div class="project-header">
+                <span class="project-number">03</span>
+                <div class="project-heading">
+                  <h3>INDRA</h3>
+                  <p>OSINT Intelligence Dashboard</p>
+                </div>
+                <span class="project-domain cyan">OSINT</span>
+                <span class="project-arrow">→</span>
+              </div>
+
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <span class="meta-label">Problem</span>
+                    <p>Open-source intelligence work often creates fragmented data across many sources and verification steps.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Solution</span>
+                    <p>A dashboard concept for collecting, organizing and validating information from open sources into a clearer structure.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail-grid">
+                  <div>
+                    <span class="meta-label">Implementation</span>
+                    <p>Organized signal collection, verification flow and knowledge-graph style connections for intelligent analysis.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Technologies</span>
+                    <div class="tag-row">
+                      <span>JavaScript</span>
+                      <span>AI</span>
+                      <span>OSINT</span>
+                      <span>Knowledge Graph</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">What I learned</span>
+                  <p>Collecting data is only half the work — structure and trust are what make it genuinely useful for analysis.</p>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">Future scope</span>
+                  <p>Improve source verification, entity clustering and richer visual mapping for bigger datasets.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-panel reveal" tabindex="0" data-project="club-management">
+              <div class="project-header">
+                <span class="project-number">04</span>
+                <div class="project-heading">
+                  <h3>CLUB MANAGEMENT SYSTEM</h3>
+                  <p>Student Club Management Platform</p>
+                </div>
+                <span class="project-domain orange">Web Development</span>
+                <span class="project-arrow">→</span>
+              </div>
+
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <span class="meta-label">Problem</span>
+                    <p>Student clubs often work with disconnected tools and repetitive administration tasks, which makes coordination harder than it needs to be.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Solution</span>
+                    <p>A web application for managing club members, activities and operational coordination from a single place.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail-grid">
+                  <div>
+                    <span class="meta-label">Implementation</span>
+                    <p>Built using a database-backed web application design to handle day-to-day club operations more efficiently.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Technologies</span>
+                    <div class="tag-row">
+                      <span>Node.js</span>
+                      <span>Express</span>
+                      <span>MongoDB</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">What I learned</span>
+                  <p>I learned how backend design shapes real user workflows — and how data modeling affects the quality of everyday operations.</p>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">Future scope</span>
+                  <p>Add role-based access, analytics and smarter notifications to support long-term club management.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-panel reveal" tabindex="0" data-project="survival-hub">
+              <div class="project-header">
+                <span class="project-number">05</span>
+                <div class="project-heading">
+                  <h3>STUDENT SURVIVAL HUB</h3>
+                  <p>Academic Productivity Platform</p>
+                </div>
+                <span class="project-domain orange">Web Development</span>
+                <span class="project-arrow">→</span>
+              </div>
+
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <span class="meta-label">Problem</span>
+                    <p>Students often manage tasks, attendance, deadlines and notes across multiple disconnected tools, which makes planning harder.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Solution</span>
+                    <p>A unified academic dashboard combining everyday productivity tools into one interface to reduce friction and improve focus.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail-grid">
+                  <div>
+                    <span class="meta-label">Implementation</span>
+                    <p>Combined student planning tools with a clean interface focused on utility and simplicity.</p>
+                  </div>
+                  <div>
+                    <span class="meta-label">Technologies</span>
+                    <div class="tag-row">
+                      <span>HTML</span>
+                      <span>CSS</span>
+                      <span>JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">What I learned</span>
+                  <p>Practical student tools become valuable when they stay simple, clear and easy to use every day.</p>
+                </div>
+
+                <div class="project-learning">
+                  <span class="meta-label">Future scope</span>
+                  <p>Improve customization, local persistence and personalized academic insights for stronger long-term engagement.</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <div class="projects-list">
-
-          <!-- Project 01 -->
-          <article class="project-item" data-project="anveshan">
-            <div class="project-top-row">
-              <span class="project-number">01</span>
-              <div class="project-info">
-                <h3 class="project-title">ANVESHAN</h3>
-                <p class="project-subtitle">AI-Powered Email Threat Detection & Forensic Intelligence Platform</p>
-                <span class="project-category">Cybersecurity · AI</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-            <p class="project-desc">A platform focused on analyzing suspicious emails, identifying potential threats, assisting with geolocation and providing forensic intelligence.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">AI/ML</span>
-              <span class="tech-tag">OSINT</span>
-              <span class="tech-tag">Email Security</span>
-            </div>
-          </article>
-
-          <!-- Project 02 -->
-          <article class="project-item" data-project="webguard">
-            <div class="project-top-row">
-              <span class="project-number">02</span>
-              <div class="project-info">
-                <h3 class="project-title">WebGuard</h3>
-                <p class="project-subtitle">AI-Assisted Web Vulnerability Detection & Security Testing Platform</p>
-                <span class="project-category">Cybersecurity · Web Security</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-            <p class="project-desc">A platform focused on detecting web vulnerabilities such as XSS and assisting security testing through AI-assisted analysis.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Web Security</span>
-              <span class="tech-tag">OWASP</span>
-            </div>
-          </article>
-
-          <!-- Project 03 -->
-          <article class="project-item" data-project="indra">
-            <div class="project-top-row">
-              <span class="project-number">03</span>
-              <div class="project-info">
-                <h3 class="project-title">INDRA</h3>
-                <p class="project-subtitle">OSINT Intelligence Dashboard</p>
-                <span class="project-category">OSINT · AI · Cybersecurity</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-            <p class="project-desc">A dashboard concept for collecting, organizing, verifying and visualizing information from open sources.</p>
-            <div class="project-tech">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">AI</span>
-              <span class="tech-tag">OSINT</span>
-              <span class="tech-tag">Knowledge Graph</span>
-            </div>
-          </article>
-
-          <!-- Project 04 -->
-          <article class="project-item" data-project="club-management">
-            <div class="project-top-row">
-              <span class="project-number">04</span>
-              <div class="project-info">
-                <h3 class="project-title">Club Management System</h3>
-                <p class="project-subtitle">Student Club Management Platform</p>
-                <span class="project-category">Web Development</span>
-              </div>
-              <a href="https://github.com/sumith-art/CLUB_MANAGEMENT_SYSTEM" target="_blank" rel="noopener noreferrer" class="project-arrow project-external-link" onclick="event.stopPropagation()">↗</a>
-            </div>
-            <p class="project-desc">A web application for managing student clubs, members and events.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-          </article>
-
-          <!-- Project 05 -->
-          <article class="project-item" data-project="survival-hub">
-            <div class="project-top-row">
-              <span class="project-number">05</span>
-              <div class="project-info">
-                <h3 class="project-title">Student Survival Hub</h3>
-                <p class="project-subtitle">Academic Productivity Platform</p>
-                <span class="project-category">Web Development</span>
-              </div>
-              <span class="project-arrow">→</span>
-            </div>
-            <p class="project-desc">A student productivity platform combining academic tools — Task Manager, Pomodoro, Attendance Tracker, Exam Countdown, Notes, Flashcards, GPA/SGPA Calculator and Analytics — into one dashboard.</p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======== PROJECT DETAIL MODAL ======== -->
-    <div class="modal-overlay" id="projectModal">
-      <div class="modal-content">
-        <button class="modal-close" id="modalClose" aria-label="Close project detail">&times;</button>
-        <span class="modal-category" id="modalCategory"></span>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <p class="modal-subtitle" id="modalSubtitle"></p>
-        <div class="modal-divider"></div>
-        <div class="modal-section">
-          <h4>Problem</h4>
-          <p id="modalProblem"></p>
-        </div>
-        <div class="modal-section">
-          <h4>Approach & Implementation</h4>
-          <p id="modalApproach"></p>
-        </div>
-        <div class="modal-section">
-          <h4>Technologies</h4>
-          <div class="modal-tech" id="modalTech"></div>
-        </div>
-        <div class="modal-section">
-          <h4>Key Features</h4>
-          <ul class="modal-features" id="modalFeatures"></ul>
-        </div>
-        <div class="modal-section">
-          <h4>What I Learned</h4>
-          <p id="modalLearned"></p>
-        </div>
-        <div class="modal-section">
-          <h4>Future Improvements</h4>
-          <p id="modalFuture"></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======== EXPERIENCE ======== -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-head reveal">
             <span class="section-number">03 / EXPERIENCE</span>
+            <h2>Where I’ve learned.</h2>
           </div>
-          <div class="section-content-col">
-            <h2 class="section-heading">Where I've worked.</h2>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-marker">
-                  <div class="timeline-line"></div>
-                  <div class="timeline-dot"></div>
-                </div>
-                <div class="timeline-content">
-                  <span class="timeline-date">August 2026</span>
-                  <h3 class="timeline-role">Cybersecurity Field Work Internship</h3>
-                  <p class="timeline-org">Cyber Crime Police Station — Mangaluru</p>
-                  <ul class="timeline-details">
-                    <li>Gained exposure to real-world cybercrime investigation workflows and digital forensic procedures.</li>
-                    <li>Worked with National Cyber Crime Reporting Portal (NCRP) and 1930 Cyber Fraud Helpline operations.</li>
-                    <li>Learned about CEIR / Sanchar Saathi for device tracking and SAMANVAYA for inter-agency coordination.</li>
-                    <li>Observed end-to-end cybercrime case handling — from complaint registration to evidence collection.</li>
-                  </ul>
-                </div>
+
+          <div class="timeline reveal">
+            <div class="timeline-item active">
+              <button class="timeline-node" type="button" aria-expanded="true" aria-controls="exp-one"></button>
+              <div class="timeline-content" id="exp-one">
+                <span class="timeline-date">August 2026</span>
+                <h3>Cybersecurity Field Work Internship</h3>
+                <p class="timeline-org">Cyber Crime Police Station — Mangaluru</p>
+                <ul>
+                  <li>NCRP and the 1930 Cyber Fraud Helpline</li>
+                  <li>CEIR / Sanchar Saathi awareness and digital investigation workflows</li>
+                  <li>SAMANVAYA and practical cybercrime case handling procedures</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======== SKILLS ======== -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
-            <span class="section-number">04 / TECHNICAL SKILLS</span>
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-number">04 / TECHNICAL TOOLKIT</span>
+            <h2>Tools and systems I work with.</h2>
           </div>
-          <div class="section-content-col">
-            <h2 class="section-heading">Tools & technologies.</h2>
-            <div class="skills-grid">
-              <div class="skill-group">
-                <h4 class="skill-group-title">Programming</h4>
-                <p class="skill-group-items">C · C++ · Java · Python · JavaScript</p>
-              </div>
-              <div class="skill-group">
-                <h4 class="skill-group-title">Web Development</h4>
-                <p class="skill-group-items">HTML · CSS · JavaScript · Node.js · Express</p>
-              </div>
-              <div class="skill-group">
-                <h4 class="skill-group-title">Databases</h4>
-                <p class="skill-group-items">MongoDB · MySQL · PostgreSQL</p>
-              </div>
-              <div class="skill-group">
-                <h4 class="skill-group-title">Cybersecurity</h4>
-                <p class="skill-group-items">Nmap · Burp Suite · Wireshark · OWASP · Web Security</p>
-              </div>
-              <div class="skill-group">
-                <h4 class="skill-group-title">Tools</h4>
-                <p class="skill-group-items">Git · GitHub · Linux · Kali Linux · VS Code</p>
-              </div>
+
+          <div class="skills-wrapper reveal">
+            <div class="skill-tabs" role="tablist" aria-label="Skill categories">
+              <button class="skill-tab active" type="button" data-skill="Programming">Programming</button>
+              <button class="skill-tab" type="button" data-skill="Web">Web</button>
+              <button class="skill-tab" type="button" data-skill="Backend">Backend</button>
+              <button class="skill-tab" type="button" data-skill="Database">Database</button>
+              <button class="skill-tab" type="button" data-skill="Cybersecurity">Cybersecurity</button>
+              <button class="skill-tab" type="button" data-skill="Tools">Tools</button>
             </div>
+
+            <div class="skill-grid" id="skillGrid"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======== INTERESTS ======== -->
-    <section class="section section-alt" id="interests">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
-            <span class="section-number">AREAS OF INTEREST</span>
+      <section class="section" id="explore">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-number">CURRENTLY EXPLORING</span>
+            <h2>Focus areas that shape my work.</h2>
           </div>
-          <div class="section-content-col">
-            <div class="interests-grid">
-              <div class="interest-card">
-                <div class="interest-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                </div>
-                <h4 class="interest-title">Cybersecurity</h4>
-                <p class="interest-desc">Web security, vulnerability detection and network security.</p>
-              </div>
-              <div class="interest-card">
-                <div class="interest-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <h4 class="interest-title">Software Development</h4>
-                <p class="interest-desc">Web applications, APIs, databases and backend systems.</p>
-              </div>
-              <div class="interest-card">
-                <div class="interest-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2.8 4 6 4 6s4-3.2 4-6a4 4 0 0 0-4-4z"/><circle cx="12" cy="14" r="4"/><path d="M16.24 17.76A6 6 0 0 1 6 18"/><path d="M18 18a6 6 0 0 1-12 0"/></svg>
-                </div>
-                <h4 class="interest-title">Artificial Intelligence</h4>
-                <p class="interest-desc">AI-assisted development and intelligent security tools.</p>
-              </div>
-              <div class="interest-card">
-                <div class="interest-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                </div>
-                <h4 class="interest-title">OSINT</h4>
-                <p class="interest-desc">Information gathering, verification and analysis.</p>
-              </div>
-            </div>
+
+          <div class="explore-grid">
+            <article class="explore-card reveal">
+              <div class="icon-box blue">S</div>
+              <h3>Cybersecurity</h3>
+              <p>Web security, vulnerability detection and network exposure analysis.</p>
+            </article>
+            <article class="explore-card reveal">
+              <div class="icon-box cyan">D</div>
+              <h3>Software Engineering</h3>
+              <p>Applications, APIs, backend systems and practical development workflows.</p>
+            </article>
+            <article class="explore-card reveal">
+              <div class="icon-box orange">A</div>
+              <h3>AI</h3>
+              <p>AI-assisted tools, intelligent systems and real-world product thinking.</p>
+            </article>
+            <article class="explore-card reveal">
+              <div class="icon-box dark">O</div>
+              <h3>OSINT</h3>
+              <p>Information gathering, verification, analysis and structured investigation.</p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ======== ACTIVITIES ======== -->
-    <section class="section" id="activities">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
+      <section class="section" id="github">
+        <div class="container github-wrap reveal">
+          <div class="github-copy">
+            <span class="section-number">CODE, EXPERIMENTS & PROJECTS</span>
+            <h2>github.com/Sumith-Shetty1</h2>
+          </div>
+          <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer" class="btn btn-primary">View GitHub →</a>
+        </div>
+
+        <div class="container">
+          <div class="contribution-grid reveal" aria-label="GitHub activity preview">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="activities">
+        <div class="container">
+          <div class="section-head reveal">
             <span class="section-number">05 / ACTIVITIES</span>
+            <h2>Participation beyond the classroom.</h2>
           </div>
-          <div class="section-content-col">
-            <div class="activities-list">
-              <div class="activity-item">
-                <h4 class="activity-title">Smart India Hackathon 2026</h4>
-                <p class="activity-desc">Participated in the preliminary round and progressed through the selection process.</p>
-              </div>
-              <div class="activity-item">
-                <h4 class="activity-title">GitHub Copilot Dev Days</h4>
-                <p class="activity-desc">Participated in a developer-focused workshop exploring AI-assisted development.</p>
-              </div>
-              <div class="activity-item">
-                <h4 class="activity-title">AICTE Activities</h4>
-                <p class="activity-desc">Participated in student and community activities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ======== CONTACT ======== -->
-    <section class="section section-alt" id="contact">
-      <div class="container">
-        <div class="section-grid">
-          <div class="section-label-col">
-            <span class="section-number">06 / CONTACT</span>
-          </div>
-          <div class="section-content-col">
-            <h2 class="section-heading contact-heading">Let's build something useful.</h2>
-            <p class="contact-subtext">I'm always interested in interesting projects, collaborations, internships and opportunities to learn.</p>
-            <div class="contact-links">
-              <a href="mailto:sumithgo17@gmail.com" class="contact-link-item">sumithgo17@gmail.com</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link-item">LinkedIn ↗</a>
-              <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noopener noreferrer" class="contact-link-item">GitHub ↗</a>
+          <div class="activities-list reveal">
+            <div class="activity-item">
+              <h3>Smart India Hackathon 2026</h3>
+              <p>Participated in the preliminary round and progressed through the selection process.</p>
+            </div>
+            <div class="activity-item">
+              <h3>GitHub Copilot Dev Days</h3>
+              <p>Participated in a developer-focused workshop exploring AI-assisted development.</p>
+            </div>
+            <div class="activity-item">
+              <h3>AICTE Activities</h3>
+              <p>Participated in student and community activities with a focus on learning and engagement.</p>
             </div>
           </div>
         </div>
-        <div class="contact-form-wrapper">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required />
-                <span class="form-error" id="nameError"></span>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <span class="section-number light">06 / CONTACT</span>
+            <h2>Let’s build something interesting.</h2>
+            <p>Open to internships, collaborations, technical projects and opportunities to learn.</p>
+            <div class="contact-links">
+              <a href="mailto:sumithgo17@gmail.com">sumithgo17@gmail.com</a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field-row">
+              <div class="field-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+                <span class="error-text" id="nameError"></span>
               </div>
-              <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required />
-                <span class="form-error" id="emailError"></span>
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+                <span class="error-text" id="emailError"></span>
               </div>
             </div>
-            <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your message..." required></textarea>
-              <span class="form-error" id="messageError"></span>
+
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+              <span class="error-text" id="messageError"></span>
             </div>
+
             <button type="submit" class="btn btn-primary">Send Message →</button>
           </form>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Sumith A. Shetty</p>
+        <div class="footer-links">
+          <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer">GitHub</a>
+          <span>·</span>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span>·</span>
+          <a href="mailto:sumithgo17@gmail.com">Email</a>
+        </div>
+        <p class="footer-note">Built with HTML, CSS & JavaScript.</p>
       </div>
-    </section>
+    </footer>
 
-  </main>
-
-  <!-- ======== FOOTER ======== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">© 2026 Sumith A. Shetty</p>
-      <div class="footer-links">
-        <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <span class="footer-dot">·</span>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="footer-dot">·</span>
-        <a href="mailto:sumithgo17@gmail.com">Email</a>
-      </div>
-      <p class="footer-tagline">Built with HTML, CSS & JavaScript.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
