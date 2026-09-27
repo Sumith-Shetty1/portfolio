@@ -15,6 +15,14 @@
     />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#F7F7F2" />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,6 +54,12 @@
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch theme">
+              <span class="theme-icon" aria-hidden="true">☀</span>
+              <span class="theme-text">Light</span>
+            </button>
+          </li>
           <li><a href="assets/resume.pdf" class="nav-resume" download>Resume ↗</a></li>
         </ul>
       </nav>
@@ -581,7 +595,7 @@
           <span>·</span>
           <a href="mailto:sumithgo17@gmail.com">Email</a>
         </div>
-        <p class="footer-note">Built with HTML, CSS & JavaScript.</p>
+        <p class="footer-note">Looking forward to building something meaningful with you.</p>
       </div>
     </footer>
 

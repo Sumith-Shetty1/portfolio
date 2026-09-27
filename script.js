@@ -1,11 +1,48 @@
 const nav = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
+const themeToggle = document.getElementById('themeToggle');
 const progressBar = document.getElementById('scrollProgress');
 const revealItems = document.querySelectorAll('.reveal');
 const skillTabs = document.querySelectorAll('.skill-tab');
 const skillGrid = document.getElementById('skillGrid');
 const contactForm = document.getElementById('contactForm');
+const THEME_KEY = 'portfolio-theme';
+
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem(THEME_KEY, theme);
+
+  if (!themeToggle) return;
+
+  const isDark = theme === 'dark';
+  themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  themeToggle.setAttribute('aria-pressed', String(isDark));
+  themeToggle.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  themeToggle.querySelector('.theme-icon').textContent = isDark ? '☾' : '☀';
+  themeToggle.querySelector('.theme-text').textContent = isDark ? 'Dark' : 'Light';
+}
+
+function initThemeToggle() {
+  if (!themeToggle) return;
+
+  applyTheme(getPreferredTheme());
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+  });
+}
 
 const skillData = {
   Programming: ['C', 'C++', 'Java', 'Python', 'JavaScript'],
@@ -298,6 +335,7 @@ window.addEventListener('load', () => {
   typeTerminal();
 });
 
+initThemeToggle();
 initRevealAnimations();
 initSkillTabs();
 initMobileNav();
