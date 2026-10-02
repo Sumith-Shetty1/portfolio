@@ -14,7 +14,7 @@
       content="Portfolio of Sumith A. Shetty, a Computer Science Engineering student focused on software development, cybersecurity and AI."
     />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#F7F7F2" />
+    <meta name="theme-color" content="#f8f7f4" />
     <script>
       (function () {
         const savedTheme = localStorage.getItem('portfolio-theme');
@@ -27,20 +27,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <title>Sumith A. Shetty | Computer Science Engineering Student</title>
   </head>
   <body>
+    <!-- Subtle ambient cursor follower -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
     <div class="scroll-progress" aria-hidden="true">
       <span id="scrollProgress"></span>
     </div>
 
     <header class="site-header">
       <nav class="navbar container" id="navbar">
-        <a href="#hero" class="brand">SUMITH.</a>
+        <a href="#hero" class="brand">
+          SUMITH<span class="brand-dot">.</span>
+        </a>
 
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <span></span>
@@ -69,23 +74,41 @@
       <section class="hero" id="hero">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">CSE STUDENT · CYBERSECURITY · SOFTWARE DEVELOPMENT</p>
+            <div class="eyebrow-wrap">
+              <p class="eyebrow">CSE STUDENT · CYBERSECURITY · SOFTWARE DEVELOPMENT</p>
+              <span class="wave-emoji" aria-label="Waving hand" title="Hey!">👋</span>
+            </div>
             <h1>I build things that <span>solve real problems.</span></h1>
             <p class="lead">
               Computer Science Engineering student exploring software development,
               cybersecurity, AI and practical engineering through projects and experimentation.
             </p>
             <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">Explore My Work →</a>
-              <a href="assets/resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore My Work</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a href="assets/resume.pdf" class="btn btn-secondary" download>
+                <span>Download Resume</span>
+              </a>
             </div>
           </div>
 
           <div class="hero-visual reveal">
-            <div class="profile-card">
+            <div class="profile-card" data-tilt>
               <div class="profile-header">
                 <span class="mini-label">Engineer Profile</span>
-                <span class="status-pill"><span class="status-dot"></span>Available for opportunities</span>
+                <button
+                  class="status-pill interactive-pill"
+                  id="statusPill"
+                  type="button"
+                  aria-label="Current status, click to cycle"
+                  title="Click to cycle status! ✨"
+                >
+                  <span class="status-dot"></span>
+                  <span class="status-text" id="statusText">Available for opportunities</span>
+                  <span class="status-hint" aria-hidden="true">↺</span>
+                </button>
               </div>
 
               <h2>SUMITH A. SHETTY</h2>
@@ -93,24 +116,41 @@
 
               <div class="profile-block">
                 <span class="profile-label">Currently exploring</span>
-                <ul>
-                  <li>Cybersecurity</li>
-                  <li>Software Engineering</li>
-                  <li>AI</li>
+                <ul class="profile-tags">
+                  <li><span class="tag-bullet">🛡️</span> Cybersecurity</li>
+                  <li><span class="tag-bullet">⚡</span> Software Engineering</li>
+                  <li><span class="tag-bullet">🤖</span> AI & Systems</li>
                 </ul>
               </div>
 
-              <p class="location">Mangalore, India</p>
+              <div class="profile-footer">
+                <p class="location">
+                  <span class="loc-pin">📍</span> Mangalore, India
+                </p>
+                <span class="profile-badge">Student & Builder</span>
+              </div>
             </div>
 
             <div class="terminal-panel" aria-live="polite">
               <div class="terminal-topbar">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="terminal-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="terminal-title">sumith@developer: ~</div>
               </div>
               <div class="terminal-content">
                 <pre id="terminalOutput"></pre>
+              </div>
+              <div class="terminal-footer">
+                <span class="terminal-cmd-label">Quick run:</span>
+                <div class="terminal-btns" id="terminalBtns">
+                  <button type="button" class="term-btn" data-cmd="whoami">whoami</button>
+                  <button type="button" class="term-btn" data-cmd="skills">skills</button>
+                  <button type="button" class="term-btn" data-cmd="focus">focus</button>
+                  <button type="button" class="term-btn" data-cmd="clear">clear</button>
+                </div>
               </div>
             </div>
           </div>
@@ -135,24 +175,56 @@
                 My interests sit at the intersection of software development, cybersecurity and AI. I enjoy
                 learning by building, testing ideas quickly and improving them through iteration.
               </p>
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎯</span>
+                  <div>
+                    <strong>Hands-on Mindset</strong>
+                    <span>Learning through code, experiments and real tools</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🛡️</span>
+                  <div>
+                    <strong>Security Conscious</strong>
+                    <span>Thinking about defenses, verification and data privacy</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="stats-grid reveal">
-              <div class="stat-card">
+              <div class="stat-card" data-tilt>
+                <div class="stat-top">
+                  <span class="stat-icon">🎓</span>
+                  <span class="stat-mini-tag">Class</span>
+                </div>
                 <span class="stat-value" data-target="2028">0</span>
                 <span class="stat-label">Graduation</span>
               </div>
-              <div class="stat-card">
+              <div class="stat-card" data-tilt>
+                <div class="stat-top">
+                  <span class="stat-icon">📈</span>
+                  <span class="stat-mini-tag">Academics</span>
+                </div>
                 <span class="stat-value" data-target="8.4">0</span>
                 <span class="stat-label">Current CGPA</span>
               </div>
-              <div class="stat-card">
+              <div class="stat-card" data-tilt>
+                <div class="stat-top">
+                  <span class="stat-icon">🛠️</span>
+                  <span class="stat-mini-tag">Builds</span>
+                </div>
                 <span class="stat-value" data-target="05">0</span>
                 <span class="stat-label">Projects</span>
               </div>
-              <div class="stat-card">
-                <span class="stat-value" data-target="CSE">0</span>
-                <span class="stat-label">ICB</span>
+              <div class="stat-card" data-tilt>
+                <div class="stat-top">
+                  <span class="stat-icon">💻</span>
+                  <span class="stat-mini-tag">Major</span>
+                </div>
+                <span class="stat-value" data-target="CSE">CSE</span>
+                <span class="stat-label">Branch</span>
               </div>
             </div>
           </div>
@@ -166,8 +238,16 @@
             <h2>Things I’ve built.</h2>
           </div>
 
-          <div class="project-list">
-            <article class="project-panel reveal expanded" tabindex="0" data-project="anveshan">
+          <!-- Playful Category Filter Tabs -->
+          <div class="project-filter-bar reveal" role="tablist" aria-label="Filter projects by domain">
+            <button class="filter-btn active" type="button" data-filter="all">All (5)</button>
+            <button class="filter-btn" type="button" data-filter="cybersecurity">Cybersecurity (2)</button>
+            <button class="filter-btn" type="button" data-filter="web">Web Dev (2)</button>
+            <button class="filter-btn" type="button" data-filter="osint">OSINT (1)</button>
+          </div>
+
+          <div class="project-list" id="projectList">
+            <article class="project-panel reveal expanded" tabindex="0" data-project="anveshan" data-category="cybersecurity">
               <div class="project-header">
                 <span class="project-number">01</span>
                 <div class="project-heading">
@@ -175,50 +255,52 @@
                   <p>AI-Powered Email Threat Detection & Forensic Intelligence Platform</p>
                 </div>
                 <span class="project-domain blue">Cybersecurity</span>
-                <span class="project-arrow">→</span>
+                <span class="project-arrow" aria-hidden="true">→</span>
               </div>
 
               <div class="project-body">
-                <div class="project-meta">
-                  <div>
-                    <span class="meta-label">Problem</span>
-                    <p>Suspicious emails are hard to process quickly, especially when they hide malicious intent behind convincing content and incomplete context.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Solution</span>
-                    <p>An AI-assisted platform to assess suspicious emails, highlight possible threats, and support forensic intelligence gathering.</p>
-                  </div>
-                </div>
-
-                <div class="project-detail-grid">
-                  <div>
-                    <span class="meta-label">Implementation</span>
-                    <p>Focused on email analysis, behavior-based indicators, geo-context enrichment and structured investigation workflows.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Technologies</span>
-                    <div class="tag-row">
-                      <span>Python</span>
-                      <span>AI/ML</span>
-                      <span>OSINT</span>
-                      <span>Email Security</span>
+                <div class="project-body-inner">
+                  <div class="project-meta">
+                    <div>
+                      <span class="meta-label">Problem</span>
+                      <p>Suspicious emails are hard to process quickly, especially when they hide malicious intent behind convincing content and incomplete context.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Solution</span>
+                      <p>An AI-assisted platform to assess suspicious emails, highlight possible threats, and support forensic intelligence gathering.</p>
                     </div>
                   </div>
-                </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">What I learned</span>
-                  <p>Threat detection is not only about detection — it also needs clarity, context and a strong investigation flow for users to trust the output.</p>
-                </div>
+                  <div class="project-detail-grid">
+                    <div>
+                      <span class="meta-label">Implementation</span>
+                      <p>Focused on email analysis, behavior-based indicators, geo-context enrichment and structured investigation workflows.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Technologies</span>
+                      <div class="tag-row">
+                        <span>Python</span>
+                        <span>AI/ML</span>
+                        <span>OSINT</span>
+                        <span>Email Security</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">Future scope</span>
-                  <p>Expand with stronger intelligence integrations, automated report generation and deeper case management workflows.</p>
+                  <div class="project-learning">
+                    <span class="meta-label">What I learned</span>
+                    <p>Threat detection is not only about detection — it also needs clarity, context and a strong investigation flow for users to trust the output.</p>
+                  </div>
+
+                  <div class="project-learning">
+                    <span class="meta-label">Future scope</span>
+                    <p>Expand with stronger intelligence integrations, automated report generation and deeper case management workflows.</p>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="project-panel reveal" tabindex="0" data-project="webguard">
+            <article class="project-panel reveal" tabindex="0" data-project="webguard" data-category="cybersecurity">
               <div class="project-header">
                 <span class="project-number">02</span>
                 <div class="project-heading">
@@ -226,101 +308,105 @@
                   <p>AI-Assisted Web Vulnerability Detection & Security Testing Platform</p>
                 </div>
                 <span class="project-domain blue">Cybersecurity</span>
-                <span class="project-arrow">→</span>
+                <span class="project-arrow" aria-hidden="true">→</span>
               </div>
 
               <div class="project-body">
-                <div class="project-meta">
-                  <div>
-                    <span class="meta-label">Problem</span>
-                    <p>Many common web vulnerabilities remain unnoticed during rapid development cycles and informal testing sessions.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Solution</span>
-                    <p>A platform that helps identify likely weaknesses such as XSS and guides the user through a more structured security review process.</p>
-                  </div>
-                </div>
-
-                <div class="project-detail-grid">
-                  <div>
-                    <span class="meta-label">Implementation</span>
-                    <p>Pattern-based checks, OWASP-aware analysis and AI-assisted interpretation for faster vulnerability identification.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Technologies</span>
-                    <div class="tag-row">
-                      <span>Python</span>
-                      <span>JavaScript</span>
-                      <span>Web Security</span>
-                      <span>OWASP</span>
+                <div class="project-body-inner">
+                  <div class="project-meta">
+                    <div>
+                      <span class="meta-label">Problem</span>
+                      <p>Many common web vulnerabilities remain unnoticed during rapid development cycles and informal testing sessions.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Solution</span>
+                      <p>A platform that helps identify likely weaknesses such as XSS and guides the user through a more structured security review process.</p>
                     </div>
                   </div>
-                </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">What I learned</span>
-                  <p>Security tools become more powerful when they explain risk clearly and make findings actionable for developers.</p>
-                </div>
+                  <div class="project-detail-grid">
+                    <div>
+                      <span class="meta-label">Implementation</span>
+                      <p>Pattern-based checks, OWASP-aware analysis and AI-assisted interpretation for faster vulnerability identification.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Technologies</span>
+                      <div class="tag-row">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>Web Security</span>
+                        <span>OWASP</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">Future scope</span>
-                  <p>Expand coverage for more vulnerability classes and connect the analysis flow with cleaner reporting tools.</p>
+                  <div class="project-learning">
+                    <span class="meta-label">What I learned</span>
+                    <p>Security tools become more powerful when they explain risk clearly and make findings actionable for developers.</p>
+                  </div>
+
+                  <div class="project-learning">
+                    <span class="meta-label">Future scope</span>
+                    <p>Expand coverage for more vulnerability classes and connect the analysis flow with cleaner reporting tools.</p>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="project-panel reveal" tabindex="0" data-project="indra">
+            <article class="project-panel reveal" tabindex="0" data-project="indra" data-category="osint">
               <div class="project-header">
                 <span class="project-number">03</span>
                 <div class="project-heading">
                   <h3>INDRA</h3>
                   <p>OSINT Intelligence Dashboard</p>
                 </div>
-                <span class="project-domain cyan">OSINT</span>
-                <span class="project-arrow">→</span>
+                <span class="project-domain teal">OSINT</span>
+                <span class="project-arrow" aria-hidden="true">→</span>
               </div>
 
               <div class="project-body">
-                <div class="project-meta">
-                  <div>
-                    <span class="meta-label">Problem</span>
-                    <p>Open-source intelligence work often creates fragmented data across many sources and verification steps.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Solution</span>
-                    <p>A dashboard concept for collecting, organizing and validating information from open sources into a clearer structure.</p>
-                  </div>
-                </div>
-
-                <div class="project-detail-grid">
-                  <div>
-                    <span class="meta-label">Implementation</span>
-                    <p>Organized signal collection, verification flow and knowledge-graph style connections for intelligent analysis.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Technologies</span>
-                    <div class="tag-row">
-                      <span>JavaScript</span>
-                      <span>AI</span>
-                      <span>OSINT</span>
-                      <span>Knowledge Graph</span>
+                <div class="project-body-inner">
+                  <div class="project-meta">
+                    <div>
+                      <span class="meta-label">Problem</span>
+                      <p>Open-source intelligence work often creates fragmented data across many sources and verification steps.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Solution</span>
+                      <p>A dashboard concept for collecting, organizing and validating information from open sources into a clearer structure.</p>
                     </div>
                   </div>
-                </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">What I learned</span>
-                  <p>Collecting data is only half the work — structure and trust are what make it genuinely useful for analysis.</p>
-                </div>
+                  <div class="project-detail-grid">
+                    <div>
+                      <span class="meta-label">Implementation</span>
+                      <p>Organized signal collection, verification flow and knowledge-graph style connections for intelligent analysis.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Technologies</span>
+                      <div class="tag-row">
+                        <span>JavaScript</span>
+                        <span>AI</span>
+                        <span>OSINT</span>
+                        <span>Knowledge Graph</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">Future scope</span>
-                  <p>Improve source verification, entity clustering and richer visual mapping for bigger datasets.</p>
+                  <div class="project-learning">
+                    <span class="meta-label">What I learned</span>
+                    <p>Collecting data is only half the work — structure and trust are what make it genuinely useful for analysis.</p>
+                  </div>
+
+                  <div class="project-learning">
+                    <span class="meta-label">Future scope</span>
+                    <p>Improve source verification, entity clustering and richer visual mapping for bigger datasets.</p>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="project-panel reveal" tabindex="0" data-project="club-management">
+            <article class="project-panel reveal" tabindex="0" data-project="club-management" data-category="web">
               <div class="project-header">
                 <span class="project-number">04</span>
                 <div class="project-heading">
@@ -328,49 +414,51 @@
                   <p>Student Club Management Platform</p>
                 </div>
                 <span class="project-domain orange">Web Development</span>
-                <span class="project-arrow">→</span>
+                <span class="project-arrow" aria-hidden="true">→</span>
               </div>
 
               <div class="project-body">
-                <div class="project-meta">
-                  <div>
-                    <span class="meta-label">Problem</span>
-                    <p>Student clubs often work with disconnected tools and repetitive administration tasks, which makes coordination harder than it needs to be.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Solution</span>
-                    <p>A web application for managing club members, activities and operational coordination from a single place.</p>
-                  </div>
-                </div>
-
-                <div class="project-detail-grid">
-                  <div>
-                    <span class="meta-label">Implementation</span>
-                    <p>Built using a database-backed web application design to handle day-to-day club operations more efficiently.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Technologies</span>
-                    <div class="tag-row">
-                      <span>Node.js</span>
-                      <span>Express</span>
-                      <span>MongoDB</span>
+                <div class="project-body-inner">
+                  <div class="project-meta">
+                    <div>
+                      <span class="meta-label">Problem</span>
+                      <p>Student clubs often work with disconnected tools and repetitive administration tasks, which makes coordination harder than it needs to be.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Solution</span>
+                      <p>A web application for managing club members, activities and operational coordination from a single place.</p>
                     </div>
                   </div>
-                </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">What I learned</span>
-                  <p>I learned how backend design shapes real user workflows — and how data modeling affects the quality of everyday operations.</p>
-                </div>
+                  <div class="project-detail-grid">
+                    <div>
+                      <span class="meta-label">Implementation</span>
+                      <p>Built using a database-backed web application design to handle day-to-day club operations more efficiently.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Technologies</span>
+                      <div class="tag-row">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">Future scope</span>
-                  <p>Add role-based access, analytics and smarter notifications to support long-term club management.</p>
+                  <div class="project-learning">
+                    <span class="meta-label">What I learned</span>
+                    <p>I learned how backend design shapes real user workflows — and how data modeling affects the quality of everyday operations.</p>
+                  </div>
+
+                  <div class="project-learning">
+                    <span class="meta-label">Future scope</span>
+                    <p>Add role-based access, analytics and smarter notifications to support long-term club management.</p>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="project-panel reveal" tabindex="0" data-project="survival-hub">
+            <article class="project-panel reveal" tabindex="0" data-project="survival-hub" data-category="web">
               <div class="project-header">
                 <span class="project-number">05</span>
                 <div class="project-heading">
@@ -378,44 +466,46 @@
                   <p>Academic Productivity Platform</p>
                 </div>
                 <span class="project-domain orange">Web Development</span>
-                <span class="project-arrow">→</span>
+                <span class="project-arrow" aria-hidden="true">→</span>
               </div>
 
               <div class="project-body">
-                <div class="project-meta">
-                  <div>
-                    <span class="meta-label">Problem</span>
-                    <p>Students often manage tasks, attendance, deadlines and notes across multiple disconnected tools, which makes planning harder.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Solution</span>
-                    <p>A unified academic dashboard combining everyday productivity tools into one interface to reduce friction and improve focus.</p>
-                  </div>
-                </div>
-
-                <div class="project-detail-grid">
-                  <div>
-                    <span class="meta-label">Implementation</span>
-                    <p>Combined student planning tools with a clean interface focused on utility and simplicity.</p>
-                  </div>
-                  <div>
-                    <span class="meta-label">Technologies</span>
-                    <div class="tag-row">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
+                <div class="project-body-inner">
+                  <div class="project-meta">
+                    <div>
+                      <span class="meta-label">Problem</span>
+                      <p>Students often manage tasks, attendance, deadlines and notes across multiple disconnected tools, which makes planning harder.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Solution</span>
+                      <p>A unified academic dashboard combining everyday productivity tools into one interface to reduce friction and improve focus.</p>
                     </div>
                   </div>
-                </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">What I learned</span>
-                  <p>Practical student tools become valuable when they stay simple, clear and easy to use every day.</p>
-                </div>
+                  <div class="project-detail-grid">
+                    <div>
+                      <span class="meta-label">Implementation</span>
+                      <p>Combined student planning tools with a clean interface focused on utility and simplicity.</p>
+                    </div>
+                    <div>
+                      <span class="meta-label">Technologies</span>
+                      <div class="tag-row">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div class="project-learning">
-                  <span class="meta-label">Future scope</span>
-                  <p>Improve customization, local persistence and personalized academic insights for stronger long-term engagement.</p>
+                  <div class="project-learning">
+                    <span class="meta-label">What I learned</span>
+                    <p>Practical student tools become valuable when they stay simple, clear and easy to use every day.</p>
+                  </div>
+
+                  <div class="project-learning">
+                    <span class="meta-label">Future scope</span>
+                    <p>Improve customization, local persistence and personalized academic insights for stronger long-term engagement.</p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -432,9 +522,12 @@
 
           <div class="timeline reveal">
             <div class="timeline-item active">
-              <button class="timeline-node" type="button" aria-expanded="true" aria-controls="exp-one"></button>
+              <button class="timeline-node" type="button" aria-expanded="true" aria-controls="exp-one" aria-label="Toggle experience detail"></button>
               <div class="timeline-content" id="exp-one">
-                <span class="timeline-date">August 2026</span>
+                <div class="timeline-top">
+                  <span class="timeline-date">August 2026</span>
+                  <span class="timeline-tag">Internship</span>
+                </div>
                 <h3>Cybersecurity Field Work Internship</h3>
                 <p class="timeline-org">Cyber Crime Police Station — Mangaluru</p>
                 <ul>
@@ -466,6 +559,7 @@
             </div>
 
             <div class="skill-grid" id="skillGrid"></div>
+            <p class="skill-hint">💡 Hover over skills or switch categories to explore tools.</p>
           </div>
         </div>
       </section>
@@ -478,23 +572,23 @@
           </div>
 
           <div class="explore-grid">
-            <article class="explore-card reveal">
-              <div class="icon-box blue">S</div>
+            <article class="explore-card reveal" data-tilt>
+              <div class="icon-box blue">🛡️</div>
               <h3>Cybersecurity</h3>
               <p>Web security, vulnerability detection and network exposure analysis.</p>
             </article>
-            <article class="explore-card reveal">
-              <div class="icon-box cyan">D</div>
+            <article class="explore-card reveal" data-tilt>
+              <div class="icon-box teal">⚡</div>
               <h3>Software Engineering</h3>
               <p>Applications, APIs, backend systems and practical development workflows.</p>
             </article>
-            <article class="explore-card reveal">
-              <div class="icon-box orange">A</div>
+            <article class="explore-card reveal" data-tilt>
+              <div class="icon-box orange">🤖</div>
               <h3>AI</h3>
               <p>AI-assisted tools, intelligent systems and real-world product thinking.</p>
             </article>
-            <article class="explore-card reveal">
-              <div class="icon-box dark">O</div>
+            <article class="explore-card reveal" data-tilt>
+              <div class="icon-box dark">🔍</div>
               <h3>OSINT</h3>
               <p>Information gathering, verification, analysis and structured investigation.</p>
             </article>
@@ -508,16 +602,31 @@
             <span class="section-number">CODE, EXPERIMENTS & PROJECTS</span>
             <h2>github.com/Sumith-Shetty1</h2>
           </div>
-          <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer" class="btn btn-primary">View GitHub →</a>
+          <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer" class="btn btn-primary">
+            <span>View GitHub</span>
+            <span class="btn-arrow">→</span>
+          </a>
         </div>
 
         <div class="container">
-          <div class="contribution-grid reveal" aria-label="GitHub activity preview">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <!-- Interactive contribution activity matrix with hover tooltips -->
+          <div class="activity-panel reveal">
+            <div class="activity-header">
+              <span class="activity-title">Activity preview</span>
+              <span class="activity-legend">
+                <span>Less</span>
+                <span class="leg-box lvl-0"></span>
+                <span class="leg-box lvl-1"></span>
+                <span class="leg-box lvl-2"></span>
+                <span class="leg-box lvl-3"></span>
+                <span class="leg-box lvl-4"></span>
+                <span>More</span>
+              </span>
+            </div>
+            <div class="contribution-grid" id="contributionGrid" aria-label="GitHub activity preview">
+              <!-- Dynamically populated by script.js for interactive tooltips -->
+            </div>
+            <div class="activity-tooltip" id="activityTooltip" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -530,15 +639,18 @@
           </div>
 
           <div class="activities-list reveal">
-            <div class="activity-item">
+            <div class="activity-item" data-tilt>
+              <div class="activity-badge">🏆 Hackathon</div>
               <h3>Smart India Hackathon 2026</h3>
               <p>Participated in the preliminary round and progressed through the selection process.</p>
             </div>
-            <div class="activity-item">
+            <div class="activity-item" data-tilt>
+              <div class="activity-badge">💡 Workshop</div>
               <h3>GitHub Copilot Dev Days</h3>
               <p>Participated in a developer-focused workshop exploring AI-assisted development.</p>
             </div>
-            <div class="activity-item">
+            <div class="activity-item" data-tilt>
+              <div class="activity-badge">🤝 Community</div>
               <h3>AICTE Activities</h3>
               <p>Participated in student and community activities with a focus on learning and engagement.</p>
             </div>
@@ -552,10 +664,27 @@
             <span class="section-number light">06 / CONTACT</span>
             <h2>Let’s build something interesting.</h2>
             <p>Open to internships, collaborations, technical projects and opportunities to learn.</p>
+            
             <div class="contact-links">
-              <a href="mailto:sumithgo17@gmail.com">sumithgo17@gmail.com</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-              <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <!-- Interactive copy email pill -->
+              <div class="email-copy-pill" id="emailPill">
+                <span class="email-address">sumithgo17@gmail.com</span>
+                <button
+                  type="button"
+                  class="copy-email-btn"
+                  id="copyEmailBtn"
+                  aria-label="Copy email address"
+                  title="Copy email to clipboard"
+                >
+                  <span class="copy-icon" id="copyIcon">📋</span>
+                  <span class="copy-text" id="copyText">Copy</span>
+                </button>
+              </div>
+
+              <div class="social-links-row">
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="social-link">LinkedIn ↗</a>
+                <a href="https://github.com/Sumith-Shetty1" target="_blank" rel="noreferrer" class="social-link">GitHub ↗</a>
+              </div>
             </div>
           </div>
 
@@ -563,23 +692,26 @@
             <div class="field-row">
               <div class="field-group">
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" />
+                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" />
                 <span class="error-text" id="nameError"></span>
               </div>
               <div class="field-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" />
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
                 <span class="error-text" id="emailError"></span>
               </div>
             </div>
 
             <div class="field-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, idea or opportunity..."></textarea>
               <span class="error-text" id="messageError"></span>
             </div>
 
-            <button type="submit" class="btn btn-primary">Send Message →</button>
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="submit-text">Send Message</span>
+              <span class="btn-arrow">→</span>
+            </button>
           </form>
         </div>
       </section>
@@ -598,6 +730,9 @@
         <p class="footer-note">Looking forward to building something meaningful with you.</p>
       </div>
     </footer>
+
+    <!-- Toast notification for copy feedback -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
     <script src="script.js"></script>
   </body>
